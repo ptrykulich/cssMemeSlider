@@ -1,32 +1,36 @@
+html {
+    font-size: 16px;
+}
+  
 body {
     box-sizing: border-box;
     margin: 0;
-  }
-
+}
+  
 .container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+  
 .slider {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 10px;
-    height: 500px;
-    width: 800px;
-    background-color:gray;
+    row-gap: 0.625rem;
+    height: 31.25rem;
+    width: 50rem;
+    background-color: gray;
 }
-
+  
 /* Slides */
 
 .slides {
     order: 2;
-    width: 700px;
-    height: 400px;
+    width: 43.75rem;
+    height: 25rem;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -38,9 +42,9 @@ body {
 }
 
 .slide {
-    width: 700px;
-    height: 300px;
-    background-color:rgb(188, 188, 188);
+    width: 43.75rem;
+    height: 18.75rem;
+    background-color: rgb(188, 188, 188);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -72,38 +76,39 @@ body {
     display: flex;
     justify-content: flex-start;
     order: 2;
-    width: 350px;
+    width: 21.875rem;
     overflow: hidden;
 }
 
 .captions-container {
     display: flex;
+    transition: transform 0.3s linear;
 }
 
 .caption {
     color: white;
-    width: 350px;
+    width: 21.875rem;
 }
-
+  
 /* Navigation */
-
+  
 .navigation {
     order: 3;
     display: flex;
-    justify-content: right;
-    width: 350px;
+    justify-content: flex-end;
+    width: 21.875rem;
 }
 
 .bullet {
     display: block;
-    width: 20px;
-    height: 20px;
-    padding: 10px;
+    width: 1.25rem; 
+    height: 1.25rem;
+    padding: 0.625rem;
     border-radius: 50%;
     background-clip: content-box;
     background-color: cornflowerblue;
-    outline: 2px solid cornflowerblue;
-    outline-offset: -12px;
+    outline: 0.125rem solid cornflowerblue;
+    outline-offset: -0.75rem;
     transition: all 0.3s linear;
     cursor: pointer;
 }
@@ -112,20 +117,20 @@ body {
     outline-color: white;
     background-color: white;
 }
-
+  
 .bullet:active {
     background-color: white;
 }
-
+  
 input:checked + .bullet {
     background-color: transparent;
 }
-
+  
 input {
     display: none;
     visibility: hidden;
 }
-
+  
 /* Change Slide */
 
 .navigation:has(#bullet1:checked) ~ .slides .slides-container {
@@ -133,15 +138,15 @@ input {
 }
   
 .navigation:has(#bullet2:checked) ~ .slides .slides-container {
-    transform: translateX(-700px);
+    transform: translateX(-43.75rem);
 }
   
 .navigation:has(#bullet3:checked) ~ .slides .slides-container {
-    transform: translateX(-1400px);
+    transform: translateX(-87.5rem);
 }
   
 .navigation:has(#bullet4:checked) ~ .slides .slides-container {
-    transform: translateX(-2100px);
+    transform: translateX(-131.25rem);
 }
 
 /* Change caption */
@@ -151,18 +156,22 @@ input {
 }
   
 .navigation:has(#bullet2:checked) ~ .captions .captions-container {
-    transform: translateX(-350px);
+    transform: translateX(-21.875rem);
 }
   
 .navigation:has(#bullet3:checked) ~ .captions .captions-container {
-    transform: translateX(-700px);
+    transform: translateX(-43.75rem);
 }
   
 .navigation:has(#bullet4:checked) ~ .captions .captions-container {
-    transform: translateX(-1050px);
+    transform: translateX(-65.625rem);
 }
 
 @media (max-width: 768px) {
+
+    .slider {
+        flex-direction: column;
+    }
 
     .navigation {
         justify-content: center;
@@ -171,7 +180,7 @@ input {
 
     .captions {
         order: 4;
-        align-content: flex-start;
+        align-self: flex-start;
     }
 
     .caption-slider {
