@@ -167,7 +167,11 @@ input {
     transform: translateX(-65.625rem);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
+
+    html {
+        font-size: 12px;
+    }
 
     .slider {
         flex-direction: column;
@@ -179,6 +183,7 @@ input {
     }
 
     .captions {
+        margin-left: 3rem;
         order: 4;
         align-self: flex-start;
     }
@@ -187,4 +192,16 @@ input {
         justify-content: flex-start;
     }
 
+}
+
+@media (max-width: 620px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 405px) {
+    html {
+        font-size: 6px;
+    }
 }
