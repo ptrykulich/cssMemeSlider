@@ -34,6 +34,7 @@ body {
 
 .slides-container {
     display: flex;
+    transition: transform 0.3s linear;
 }
 
 .slide {
@@ -71,6 +72,16 @@ body {
     display: flex;
     justify-content: flex-start;
     order: 2;
+    max-width: 350px;
+    overflow: hidden;
+}
+
+.captions-container {
+    display: flex;
+}
+
+.caption {
+    color: white;
     width: 350px;
 }
 
@@ -98,11 +109,12 @@ body {
 }
 
 .bullet:hover {
-    outline-color: blue;
+    outline-color: white;
+    background-color: white;
 }
 
 .bullet:active {
-    background-color: blue;
+    background-color: white;
 }
 
 input:checked + .bullet {
@@ -116,7 +128,7 @@ input {
 
 /* Change Slide */
 
- .navigation:has(#bullet1:checked) ~ .slides .slides-container {
+.navigation:has(#bullet1:checked) ~ .slides .slides-container {
     transform: translateX(0);
 }
   
@@ -131,3 +143,22 @@ input {
 .navigation:has(#bullet4:checked) ~ .slides .slides-container {
     transform: translateX(-2100px);
 }
+
+/* Change caption */
+
+.navigation:has(#bullet1:checked) ~ .captions .captions-container {
+    transform: translateX(0);
+}
+  
+.navigation:has(#bullet2:checked) ~ .captions .captions-container {
+    transform: translateX(-350px);
+}
+  
+.navigation:has(#bullet3:checked) ~ .captions .captions-container {
+    transform: translateX(-700px);
+}
+  
+.navigation:has(#bullet4:checked) ~ .captions .captions-container {
+    transform: translateX(-1050px);
+}
+
